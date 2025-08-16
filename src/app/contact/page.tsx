@@ -40,7 +40,7 @@ export default function ContactPage() {
   return (
     <main className="bg-gray-50">
       <SimpleBanner
-        title="Contactez l'Auberge Taza"
+        title="Contactez Manhattan Motel"
         subtitle="Nous sommes disponibles pour répondre à vos questions et prendre vos réservations"
       />
 

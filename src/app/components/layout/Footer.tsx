@@ -89,7 +89,7 @@ const Footer = () => {
               {['facebook', 'instagram', 'twitter', 'linkedin'].map((social) => (
                 <a 
                   key={social} 
-                  href={`https://${social}.com/aubergetaza`} 
+                  href={`https://${social}.com/manhattanmotel`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label={`Suivez-nous sur ${social}`}
