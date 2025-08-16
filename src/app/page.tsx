@@ -1,0 +1,51 @@
+import HeroBanner from './components/banners/HeroBanner';
+import ImageTextSection from './components/sections/ImageTextSection';
+import CtaBanner from './components/banners/CtaBanner';
+
+export default function Home() {
+  return (
+    <main className="bg-white">
+      <HeroBanner />
+      
+      <div className="space-y-16 md:space-y-24 lg:space-y-32 py-16 md:py-24 lg:py-32">
+        <ImageTextSection
+          imageSrc="/hotel/room_(5).jpg"
+          imageAlt="Chambre d'hôtel luxueuse"
+          title="Votre tranquillité, notre priorité"
+          description="Nos suites exclusives offrent un havre de paix au cœur de la ville. Conçues par des architectes d'intérieur renommés, chaque détail a été pensé pour votre bien-être. Profitez d'une atmosphère sécurisée avec surveillance 24h/24 et d'un service discret mais toujours disponible."
+          imagePosition="right"
+          linkHref="/chambres"
+          linkText="Découvrir nos suites"
+        />
+
+        <ImageTextSection
+          imageSrc="/assets/surveillance.jpg"
+          imageAlt="Hall d'entrée élégant"
+          title="L'excellence d'un service sur mesure"
+          description="Dans notre auberge familiale, chaque chambre est un havre de tranquillité. Avec notre système de vidéosurveillance discret et notre environnement calme, dormez l'esprit léger. Toutes nos chambres sont équipées de coffres-forts personnels pour vos objets de valeur."
+          imagePosition="left"
+          linkHref="/services"
+          linkText="Nos prestations"
+        />
+
+        <ImageTextSection
+          imageSrc="/hotel/room_(1).jpg"
+          imageAlt="Piscine panoramique"
+          title="Évasion urbaine"
+          description="Nous proposons un service attentionné sans les prix exorbitants des grands hôtels. Notre équipe locale est disponible 24h/24 pour répondre à vos besoins tout en respectant votre intimité. Petit-déjeuner maison inclus avec des produits locaux !"
+          imagePosition="right"
+          linkHref="/galerie"
+          linkText="Visite virtuelle"
+        />
+
+        <CtaBanner
+          title="Prêt pour une expérience inoubliable ?"
+          subtitle="Réservez dès maintenant votre séjour exclusif"
+          buttonText="Réserver maintenant"
+          buttonHref="/reservation"
+          backgroundImage="/hotel/room_(5).jpg"
+        />
+      </div>
+    </main>
+  );
+}
