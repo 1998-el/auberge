@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="lg:col-span-2 space-y-6">
           <Link href="/" className="inline-block">
             <span className="text-2xl font-sans font-bold text-white">
-              Auberge<span className="text-amber-500">Taza</span>
+              Manhattan <span className="text-amber-500">Motel</span>
             </span>
           </Link>
           <p className="text-sm leading-relaxed max-w-md">
@@ -78,7 +78,7 @@ const Footer = () => {
                 <svg className="w-4 h-4 mr-3 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                contact@aubergetaza.com
+                contact@manhattanmotel.com
               </p>
             </address>
           </div>
@@ -114,7 +114,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-gray-800 mt-12 pt-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} AubergeTaza. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Manhattan Motel. Tous droits réservés.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/mentions-legales" className="hover:text-amber-400 transition-colors">Mentions légales</Link>
             <Link href="/politique-de-confidentialite" className="hover:text-amber-400 transition-colors">Confidentialité</Link>
