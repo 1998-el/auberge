@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="container mx-auto ">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-serif text-gray-800" onClick={() => setMobileOpen(false)}>
-            Manhattan<span className="text-amber-600">Motel</span>
+            MANHATTAN<span className="text-amber-600"> MOTEL</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">

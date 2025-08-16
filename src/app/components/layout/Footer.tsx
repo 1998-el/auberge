@@ -114,7 +114,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-gray-800 mt-12 pt-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Manhattan Motel. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} MANHATTAN MOTEL. Tous droits réservés.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/mentions-legales" className="hover:text-amber-400 transition-colors">Mentions légales</Link>
             <Link href="/politique-de-confidentialite" className="hover:text-amber-400 transition-colors">Confidentialité</Link>

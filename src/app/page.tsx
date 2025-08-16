@@ -27,12 +27,12 @@ export default function Home() {
           linkHref="/services"
           linkText="Nos prestations"
         />
-
+ 
         <ImageTextSection
-          imageSrc="/hotel/room_(1).jpg"
-          imageAlt="Piscine panoramique"
-          title="Évasion urbaine"
-          description="Nous proposons un service attentionné sans les prix exorbitants des grands hôtels. Notre équipe locale est disponible 24h/24 pour répondre à vos besoins tout en respectant votre intimité. Petit-déjeuner maison inclus avec des produits locaux !"
+          imageSrc="/hotel/surveillance.jpg"
+          imageAlt="Parking hautement sécurisé"
+          title="Parking hautement sécurisé"
+          description= "Votre véhicule en sécurité totale avec notre système de surveillance 24/7, contrôle d'accès biométrique et patrouilles régulières. Espaces couverts disponibles sur réservation."
           imagePosition="right"
           linkHref="/galerie"
           linkText="Visite virtuelle"
