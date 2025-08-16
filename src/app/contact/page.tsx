@@ -86,8 +86,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Email</h3>
                   <p className="text-gray-600">
-                    contact@aubergetaza.com<br />
-                    reservations@aubergetaza.com
+                    contact@manhattanmotel.com<br />
+                    reservations@manhattanmotel.com
                   </p>
                 </div>
               </div>
