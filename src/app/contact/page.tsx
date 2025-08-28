@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Adresse</h3>
                   <p className="text-gray-600">
-                    Quartier Bastos, Rue 1.234<br />
+                    Localisation: Etoudi<br />
                     Yaoundé, Cameroun
                   </p>
                 </div>
@@ -73,8 +73,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Téléphone</h3>
                   <p className="text-gray-600">
-                    +237 6XX XXX XXX<br />
-                    +237 6XX XXX XXX
+                    +237 659 407 948<br />
+                    +237 672 489 289
                   </p>
                 </div>
               </div>

@@ -1,49 +1,41 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import { Construction } from 'lucide-react';
-import Link from 'next/link';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import ReservationForm from '../components/ReservationForm'
+import WhatsAppButton from '../components/ui/WhatsAppButton'
 
 export default function ReservationPage() {
   return (
-    <div className="h-screen w-full bg-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen border w-full bg-white flex flex-col items-center justify-center p-6 pt-8">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="max-w-md w-full text-center"
+        className="max-w-md w-full"
       >
-        <div className="flex justify-center mb-6">
-          <Construction size={48} className="text-gray-400" />
-        </div>
-        
-        <h1 className="text-2xl font-semibold text-gray-800 mb-2">
-          Réservation en cours de développement
-        </h1>
-        
-        <p className="text-gray-500 mb-8">
-          Nous travaillons à vous offrir une expérience de réservation optimale.
-        </p>
+     
 
-        <div className="mb-8">
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
-          >
+        {/* Formulaire */}
+        <ReservationForm />
+
+        {/* Bouton retour */}
+        {/* <div className="mt-8 flex justify-center">
+          <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
             <Link
               href="/"
-              className="inline-block px-5 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors"
             >
-              Retour à l&apos;accueil
+              ← Retour à l&apos;accueil
             </Link>
           </motion.div>
-        </div>
+        </div> */}
 
-        <div className="text-xs text-gray-400 flex items-center justify-center">
-          <Construction size={12} className="mr-1.5" />
-          Disponible prochainement
+        {/* Bouton WhatsApp */}
+        <div className="mt-6 flex justify-center">
+          <WhatsAppButton />
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

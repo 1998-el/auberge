@@ -2,143 +2,175 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import MobileMenu from './MobileMenu';
+import MenuIcon from '../icons/MenuIcon';
+import GlobeIcon from '../icons/GlobeIcon';
+import PhoneIcon from '../icons/PhoneIcon';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+        setToastMessage('');
+      }, 3000); // Hide toast after 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 5);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Empêcher le scroll du body quand le menu est ouvert
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';
     };
   }, [mobileOpen]);
 
+  const toggleLanguage = () => {
+    setToastMessage('Les langues ne sont pas encore disponibles pour le moment.');
+    setShowToast(true);
+    // Original language change logic is commented out as per request
+    // const currentLocale = pathname.startsWith('/fr') ? 'fr' : 'en';
+    // const newLocale = currentLocale === 'fr' ? 'en' : 'fr';
+    // const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '');
+    // const newPath = `/${newLocale}${pathWithoutLocale}`;
+    // router.push(newPath);
+    // router.refresh();
+  };
+
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 px-18 ${scrolled ? 'bg-white shadow-sm' : 'bg-white/90 backdrop-blur-md'}`}>
-      <div className="container mx-auto ">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-serif text-gray-800" onClick={() => setMobileOpen(false)}>
-            MANHATTAN<span className="text-amber-600"> MOTEL</span>
+    <>
+      {showToast && (
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] bg-gray-800 text-white px-4 py-2 rounded-md shadow-lg text-sm">
+          {toastMessage}
+        </div>
+      )}
+      {/* HEADER principal */}
+      <header
+        className={`fixed top-0 w-full z-50 border-b transition-colors duration-200 ${
+          scrolled ? 'bg-white border-gray-200 shadow-sm' : 'bg-white border-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+          {/* Logo */}
+          <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
+            <Image
+              src="/logo/logo.png"
+              alt="logo motel"
+              width={32}
+              height={32}
+              className="mr-2"
+            />
+            <span className="font-semibold text-gray-900">MANHATTAN</span>
+            <span className="ml-1 text-amber-600">MOTEL</span>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Menu desktop */}
+          <nav className="hidden md:flex items-center space-x-6">
             <NavLink href="/" pathname={pathname}>Accueil</NavLink>
             <NavLink href="/chambres" pathname={pathname}>Chambres</NavLink>
             <NavLink href="/services" pathname={pathname}>Services</NavLink>
-            {/* <NavLink href="/galerie" pathname={pathname}>Galerie</NavLink> */}
             <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
-            <BookNowButton />
+            <BookNowButton text="Réserver" />
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 flex items-center text-sm text-gray-500 hover:text-gray-800"
+            >
+              <GlobeIcon className="w-4 h-4 mr-1" />
+              {pathname.startsWith('/fr') ? 'EN' : 'FR'}
+            </button>
           </nav>
 
-          <button 
+          {/* Bouton mobile */}
+          <button
             ref={buttonRef}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-gray-700 focus:outline-none"
             aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
-            <motion.div
-              animate={mobileOpen ? "open" : "closed"}
-              variants={{
-                open: { rotate: 180 },
-                closed: { rotate: 0 }
-              }}
-              className="w-6"
-            >
-              <motion.div
-                variants={{
-                  closed: { rotate: 0, y: 0 },
-                  open: { rotate: 45, y: 6 }
-                }}
-                className="h-0.5 bg-gray-700 mb-1.5"
-              />
-              <motion.div
-                variants={{
-                  closed: { opacity: 1 },
-                  open: { opacity: 0 }
-                }}
-                className="h-0.5 bg-gray-700"
-              />
-              <motion.div
-                variants={{
-                  closed: { rotate: 0, y: 0 },
-                  open: { rotate: -45, y: -6 }
-                }}
-                className="h-0.5 bg-gray-700 mt-1.5"
-              />
-            </motion.div>
+            <MenuIcon open={mobileOpen} />
           </button>
         </div>
-      </div>
 
-      <MobileMenu 
-        isOpen={mobileOpen} 
-        onClose={() => setMobileOpen(false)} 
-        pathname={pathname}
-        buttonRef={buttonRef}
-        MobileNavLinkComponent={MobileNavLink}
-        BookNowButtonComponent={BookNowButton}
-      />
-    </header>
+        {/* Menu mobile */}
+        <div className="md:hidden">
+          <MobileMenu
+            isOpen={mobileOpen}
+            onClose={() => setMobileOpen(false)}
+            pathname={pathname}
+            buttonRef={buttonRef}
+            MobileNavLinkComponent={MobileNavLink}
+            BookNowButtonComponent={BookNowButton}
+          />
+        </div>
+      </header>
+    </>
   );
 };
 
-const NavLink = ({ href, pathname, children }: { href: string, pathname: string, children: React.ReactNode }) => (
-  <Link
-    href={href}
-    className={`text-sm uppercase tracking-wider transition-colors ${
-      pathname === href ? 'text-amber-600' : 'text-gray-600 hover:text-amber-500'
-    }`}
-  >
-    {children}
+/* --------- COMPONENTS --------- */
+const NavLink: React.FC<{ href: string; pathname: string; children: React.ReactNode }> = ({
+  href,
+  pathname,
+  children,
+}) => (
+  <Link href={href}>
+    <span
+      className={`text-sm font-medium transition-colors ${
+        pathname === href ? 'text-amber-600' : 'text-gray-600 hover:text-gray-900'
+      }`}
+    >
+      {children}
+    </span>
   </Link>
 );
 
-const BookNowButton = ({ 
-  mobile = false, 
-  onClick, 
-  className = '' 
-}: { 
-  mobile?: boolean, 
-  onClick?: () => void, 
-  className?: string 
+const BookNowButton: React.FC<{ text?: string; onClick?: () => void; className?: string }> = ({
+  text = 'Réserver',
+  onClick,
+  className = '',
 }) => (
   <Link
     href="/reservation"
     onClick={onClick}
-    className={`inline-flex items-center px-6 py-3 rounded-full bg-amber-600 hover:bg-amber-700 text-white font-medium transition-colors ${
-      mobile ? 'text-base' : 'text-sm'
-    } ${className}`}
+    className={`inline-flex items-center px-4 py-1.5 rounded-md bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium transition-colors ${className}`}
   >
-    Réserver
+    {text}
   </Link>
 );
 
-const MobileNavLink = ({ href, pathname, children, onClick }: { href: string, pathname: string, children: React.ReactNode, onClick: () => void }) => (
-  <Link
-    href={href}
-    onClick={onClick}
-    className={`py-4 px-2 text-lg transition-colors ${pathname === href ? 'text-amber-600' : 'text-gray-700 hover:bg-gray-50'}`}
-  >
-    {children}
+const MobileNavLink: React.FC<{
+  href: string;
+  pathname: string;
+  children: React.ReactNode;
+  onClick: () => void;
+}> = ({ href, pathname, children, onClick }) => (
+  <Link href={href} onClick={onClick}>
+    <div
+      className={`py-3 border-b text-base ${
+        pathname === href ? 'text-amber-600 font-medium' : 'text-gray-700 hover:text-gray-900'
+      }`}
+    >
+      {children}
+    </div>
   </Link>
 );
 

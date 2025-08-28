@@ -10,9 +10,12 @@ const HeroBanner = () => {
   
   // Images optimisées pour le web (format .webp recommandé)
   const images = [
-    { src: '/hotel/image_1.jpg', alt: 'Chambre d\'hôtel luxueuse' },
-    { src: '/hotel/image_2.jpg', alt: 'Hall d\'entrée élégant' },
-    { src: '/hotel/image_3.jpg', alt: 'Piscine panoramique' }
+    { src: '/images/img_1.jpg', alt: 'Chambre d\'hôtel luxueuse' },
+    { src: '/images/img_2.jpg', alt: 'Hall d\'entrée élégant' },
+    { src: '/images/img_3.jpg', alt: 'Piscine panoramique' },
+     { src: '/images/img_4.jpg', alt: 'Chambre d\'hôtel luxueuse' },
+    { src: '/images/img_5.jpg', alt: 'Hall d\'entrée élégant' },
+    { src: '/images/img_6.jpg', alt: 'Piscine panoramique' }
   ];
 
   useEffect(() => {
@@ -47,7 +50,7 @@ const HeroBanner = () => {
               className="object-cover object-center"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/25"></div>
+            <div className="absolute inset-0 bg-black/35"></div>
           </div>
         ))}
       </div>
@@ -56,7 +59,7 @@ const HeroBanner = () => {
       <div className="relative z-10 h-full flex items-center justify-center px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-light text-white mb-6">
-            L&apos;art de l&apos;<span className="font-serif italic">hospitalité</span>
+           Votre confort  est notre <span className="font-serif italic text-amber-400">Priorite</span>
           </h1>
           
           <div className="w-16 h-px bg-white/50 mx-auto my-6"></div>

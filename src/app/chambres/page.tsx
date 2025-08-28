@@ -17,27 +17,24 @@ export default function ChambresPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <RoomCard
-              imageSrc="/hotel/room_(2).jpg"
+              imageSrc="/images/img_13.jpg"
               imageAlt="Chambre Simple"
-              title="Case Traditionnelle"
+              title="Chambre Standar"
               description="Chambre authentique avec lit double, ventilateur et salle d'eau privative. Décoration locale et ambiance chaleureuse."
-              price="15 000 - 25 000 FCFA/nuit"
               linkHref="/chambres/traditionnelle"
             />
             <RoomCard
-              imageSrc="/hotel/room_(4).jpg"
+              imageSrc="/images/img_11.jpg"
               imageAlt="Chambre Double"
-              title="Case Confort"
+              title="Chambre Confort"
               description="Espace spacieux avec deux lits, climatisation, terrasse privée et vue sur la végétation. Parfaite pour les familles."
-              price="30 000 - 45 000 FCFA/nuit"
               linkHref="/chambres/confort"
             />
             <RoomCard
-              imageSrc="/hotel/room_(5).jpg"
+              imageSrc="/images/img_14.jpg"
               imageAlt="Suite"
-              title="Case VIP"
+              title="Chambre VIP"
               description="Grand espace avec salon intégré, climatisation, décoration haut de gamme et accès piscine. Petit-déjeuner inclus."
-              price="60 000 - 80 000 FCFA/nuit"
               linkHref="/chambres/vip"
             />
             {/* <RoomCard
@@ -45,7 +42,6 @@ export default function ChambresPage() {
               imageAlt="Dortoir"
               title="Dortoir Communautaire"
               description="Solution économique avec lits superposés (4-6 places), idéal pour groupes et routards. Salle de bain partagée."
-              price="8 000 FCFA/personne"
               linkHref="/chambres/dortoir"
             /> */}
           </div>
@@ -58,18 +54,18 @@ export default function ChambresPage() {
             Envie d&apos;une escapade authentique ?
           </h2>
           <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Notre auberge vous propose des tarifs dégressifs pour les longs séjours et des formules tout compris (hébergement + petit-déjeuner + dîner).
+            Notre auberge vous propose des formules adaptées à tous les besoins, avec des services personnalisés pour rendre votre séjour inoubliable.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <div className="bg-amber-50 p-4 rounded-lg">
-              <h3 className="font-medium text-amber-800">Tarif Saison Basse</h3>
-              <p className="text-sm text-gray-600">(Avril à Juin, Septembre à Novembre)</p>
-              <p className="text-gray-700">-20% sur toutes nos cases</p>
+              <h3 className="font-medium text-amber-800">Séjour Personnalisé</h3>
+              <p className="text-sm text-gray-600">Adapté à vos préférences</p>
+              <p className="text-gray-700">Services sur mesure</p>
             </div>
             <div className="bg-green-50 p-4 rounded-lg">
-              <h3 className="font-medium text-green-800">Séjour Semaine</h3>
-              <p className="text-sm text-gray-600">(7 nuits et plus)</p>
-              <p className="text-gray-700">1 nuit offerte</p>
+              <h3 className="font-medium text-green-800">Expérience Complète</h3>
+              <p className="text-sm text-gray-600">Tout inclus</p>
+              <p className="text-gray-700">Activités et repas inclus</p>
             </div>
           </div>
           <Link

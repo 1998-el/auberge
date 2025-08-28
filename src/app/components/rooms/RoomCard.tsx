@@ -6,11 +6,10 @@ interface RoomCardProps {
   imageAlt: string;
   title: string;
   description: string;
-  price?: string;
   linkHref: string;
 }
 
-const RoomCard = ({ imageSrc, imageAlt, title, description, price, linkHref }: RoomCardProps) => {
+const RoomCard = ({ imageSrc, imageAlt, title, description, linkHref }: RoomCardProps) => {
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-gray-200">
       <div className="relative h-64 w-full">
@@ -26,11 +25,6 @@ const RoomCard = ({ imageSrc, imageAlt, title, description, price, linkHref }: R
       <div className="p-5 space-y-3">
         <div className="flex justify-between items-start">
           <h3 className="text-xl font-sans font-semibold text-gray-900">{title}</h3>
-          {price && (
-            <span className="bg-amber-50 text-amber-800 text-sm font-medium px-3 py-1 rounded-full">
-              {price}
-            </span>
-          )}
         </div>
         <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
         <Link
