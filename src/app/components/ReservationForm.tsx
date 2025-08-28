@@ -41,7 +41,7 @@ export default function ReservationForm() {
 Merci de me confirmer la disponibilité.`
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappLink = `https://wa.me/237690000000?text=${encodedMessage}`
+    const whatsappLink = `https://wa.me/672489289?text=${encodedMessage}`
     window.open(whatsappLink, '_blank')
 
     setIsSubmitting(false)

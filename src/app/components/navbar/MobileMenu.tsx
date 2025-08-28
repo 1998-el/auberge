@@ -7,7 +7,7 @@ interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   pathname: string;
-  buttonRef: React.RefObject<HTMLButtonElement>;
+  buttonRef: React.RefObject<HTMLButtonElement | null>;
   MobileNavLinkComponent: React.FC<{
     href: string;
     pathname: string;
@@ -21,7 +21,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   isOpen,
   onClose,
   pathname,
-  buttonRef,
   MobileNavLinkComponent,
   BookNowButtonComponent,
 }) => {

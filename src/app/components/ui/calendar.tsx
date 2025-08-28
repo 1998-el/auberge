@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useState } from "react"
-import { Calendar } from "react-day-picker"
+import { DayPicker } from "react-day-picker"
 import { format } from "date-fns"
 import { fr } from "date-fns/locale"
 import { cn } from "../../../lib/utils"
@@ -49,7 +49,7 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
         {/* Sélecteur de date d'arrivée */}
         <div className="relative">
           <label htmlFor="arrival-date" className="block text-sm font-medium text-gray-700 mb-1">
-            Date d'arrivée
+            Date d&apos;arrivée
           </label>
           <button
             type="button"
@@ -59,13 +59,11 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
               setShowDepartureCalendar(false)
             }}
             className={cn(
-              "w-full text-left px-3 py-2 border rounded-md shadow-sm",
-              "bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
-              "text-sm transition-colors"
+              "w-full text-left px-3 py-2 border rounded-md shadow-sm bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
             )}
           >
             {arrivalDate ? (
-              format(arrivalDate, "dd MMMM yyyy", { locale: fr })
+              format(arrivalDate, "dd MMMM yyyy")
             ) : (
               <span className="text-gray-400">Sélectionner une date</span>
             )}
@@ -73,7 +71,7 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
           
           {showArrivalCalendar && (
             <div className="absolute z-10 mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
-              <Calendar
+              <DayPicker
                 mode="single"
                 selected={arrivalDate}
                 onSelect={handleArrivalSelect}
@@ -85,10 +83,10 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
                   caption: "flex justify-center pt-1 relative items-center",
                   caption_label: "text-sm font-medium text-gray-900",
                   nav: "space-x-1 flex items-center",
-                  nav_button: cn(
+                  nav_button: cn([
                     "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
                     "inline-flex items-center justify-center rounded-md text-sm transition-colors"
-                  ),
+                  ]),
                   table: "w-full border-collapse space-y-1",
                   head_row: "flex",
                   head_cell: "text-gray-500 rounded-md w-9 font-normal text-[0.8rem]",
@@ -124,15 +122,13 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
               setShowArrivalCalendar(false)
             }}
             className={cn(
-              "w-full text-left px-3 py-2 border rounded-md shadow-sm",
-              "bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
-              "text-sm transition-colors",
+              "w-full text-left px-3 py-2 border rounded-md shadow-sm bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors",
               { "opacity-60": !arrivalDate }
             )}
             disabled={!arrivalDate}
           >
             {departureDate ? (
-              format(departureDate, "dd MMMM yyyy", { locale: fr })
+              format(departureDate, "dd MMMM yyyy")
             ) : (
               <span className="text-gray-400">
                 {arrivalDate ? "Sélectionner une date" : "Sélectionnez d'abord la date d'arrivée"}
@@ -142,7 +138,7 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
           
           {showDepartureCalendar && (
             <div className="absolute z-10 mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
-              <Calendar
+              <DayPicker
                 mode="single"
                 selected={departureDate}
                 onSelect={handleDepartureSelect}
@@ -156,10 +152,10 @@ export default function DateSelector({ onDatesChange }: DateSelectorProps) {
                   caption: "flex justify-center pt-1 relative items-center",
                   caption_label: "text-sm font-medium text-gray-900",
                   nav: "space-x-1 flex items-center",
-                  nav_button: cn(
+                  nav_button: cn([
                     "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
                     "inline-flex items-center justify-center rounded-md text-sm transition-colors"
-                  ),
+                  ]),
                   table: "w-full border-collapse space-y-1",
                   head_row: "flex",
                   head_cell: "text-gray-500 rounded-md w-9 font-normal text-[0.8rem]",

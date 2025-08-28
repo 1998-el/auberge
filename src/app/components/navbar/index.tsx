@@ -3,18 +3,17 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+
 import MobileMenu from './MobileMenu';
 import MenuIcon from '../icons/MenuIcon';
 import GlobeIcon from '../icons/GlobeIcon';
-import PhoneIcon from '../icons/PhoneIcon';
+
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const [showToast, setShowToast] = useState(false);
