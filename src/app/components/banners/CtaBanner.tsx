@@ -32,7 +32,7 @@ const CtaBanner = ({
       )}
       
       <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+        <h2 className="text-3xl md:text-4xl logo_ font-bold text-white mb-4">
           {title}
         </h2>
         <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

@@ -1,54 +1,60 @@
 import SimpleBanner from '../components/banners/SimpleBanner';
 import RoomCard from '../components/rooms/RoomCard';
 import Link from 'next/link';
+import ScrollMotion from '../components/motion/ScrollMotion';
 
 export default function ChambresPage() {
   return (
     <main>
-      <SimpleBanner
-        title="Nos Chambres & Cases"
-        subtitle="Authenticité et convivialité dans un cadre chaleureux"
-      />
+      <ScrollMotion>
+        <SimpleBanner
+          title="Nos Chambres & Cases"
+          subtitle="Authenticité et convivialité dans un cadre chaleureux"
+        />
+      </ScrollMotion>
 
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-gray-800 mb-12">
-            Découvrez nos hébergements typiques
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <RoomCard
-              imageSrc="/images/img_13.jpg"
-              imageAlt="Chambre Simple"
-              title="Chambre Standar"
-              description="Chambre authentique avec lit double, ventilateur et salle d'eau privative. Décoration locale et ambiance chaleureuse."
-              linkHref="/chambres/traditionnelle"
-            />
-            <RoomCard
-              imageSrc="/images/img_11.jpg"
-              imageAlt="Chambre Double"
-              title="Chambre Confort"
-              description="Espace spacieux avec deux lits, climatisation, terrasse privée et vue sur la végétation. Parfaite pour les familles."
-              linkHref="/chambres/confort"
-            />
-            <RoomCard
-              imageSrc="/images/img_14.jpg"
-              imageAlt="Suite"
-              title="Chambre VIP"
-              description="Grand espace avec salon intégré, climatisation, décoration haut de gamme et accès piscine. Petit-déjeuner inclus."
-              linkHref="/chambres/vip"
-            />
-            {/* <RoomCard
-              imageSrc="/hotel/room_(6).jpg"
-              imageAlt="Dortoir"
-              title="Dortoir Communautaire"
-              description="Solution économique avec lits superposés (4-6 places), idéal pour groupes et routards. Salle de bain partagée."
-              linkHref="/chambres/dortoir"
-            /> */}
+      <ScrollMotion delay={0.1}>
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-gray-800 mb-12">
+              Découvrez  un motel typiques
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <RoomCard
+                imageSrc="/images/img_13.jpg"
+                imageAlt="Chambre Simple"
+                title="Chambre Standar"
+                description="Chambre authentique avec lit double, ventilateur et salle d'eau privative. Décoration locale et ambiance chaleureuse."
+                linkHref="/chambres/traditionnelle"
+              />
+              <RoomCard
+                imageSrc="/images/img_11.jpg"
+                imageAlt="Chambre Double"
+                title="Chambre Confort"
+                description="Espace spacieux avec deux lits, climatisation, terrasse privée et vue sur la végétation. Parfaite pour les familles."
+                linkHref="/chambres/confort"
+              />
+              <RoomCard
+                imageSrc="/images/img_14.jpg"
+                imageAlt="Suite"
+                title="Chambre VIP"
+                description="Grand espace avec salon intégré, climatisation, décoration haut de gamme et accès piscine. Petit-déjeuner inclus."
+                linkHref="/chambres/vip"
+              />
+              {/* <RoomCard
+                imageSrc="/hotel/room_(6).jpg"
+                imageAlt="Dortoir"
+                title="Dortoir Communautaire"
+                description="Solution économique avec lits superposés (4-6 places), idéal pour groupes et routards. Salle de bain partagée."
+                linkHref="/chambres/dortoir"
+              /> */}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollMotion>
 
-      <section className="py-16 md:py-24 bg-white text-center">
+      <ScrollMotion delay={0.2}>
+        <section className="py-16 md:py-24 bg-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-6">
             Envie d&apos;une escapade authentique ?
@@ -76,6 +82,7 @@ export default function ChambresPage() {
           </Link>
         </div>
       </section>
+       </ScrollMotion>
     </main>
   );
 }

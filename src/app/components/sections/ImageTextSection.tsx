@@ -26,17 +26,17 @@ const ImageTextSection = ({
   const isImageLeft = imagePosition === 'left';
 
   return (
-    <section className={`py-12 md:py-16 ${simple ? 'bg-white' : 'bg-gray-50'}`}>
-      <div className={`container mx-auto px-2 ${simple ? 'max-w-5xl' : 'max-w-6xl'}`}>
-        <div className={`flex flex-col md:flex-row items-start gap-8 ${simple ? 'md:gap-8' : 'md:gap-12'}`}>
+    <section className={`py-6 ${simple ? 'bg-white' : ''}`}>
+      <div className={`container mx-auto  ${simple ? 'max-w-5xl' : 'max-w-6xl'}`}>
+        <div className={`flex flex-col md:flex-row items-start  ${simple ? 'md:gap-8' : 'md:gap-12'}`}>
           {/* Image Column */}
           <div className={`w-full md:w-1/2 relative overflow-hidden  ${isImageLeft ? 'order-1' : 'md:order-2'} ${simple ? '' : 'shadow-md'}`}>
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={700}
+              width={900}
               height={525}
-              className="object-cover w-full h-[532px] "
+              className="object-cover w-full h-[432px] "
               priority
             />
             {!simple && (
@@ -46,7 +46,7 @@ const ImageTextSection = ({
 
           {/* Text Column */}
           <div className={`w-full md:w-1/2 space-y-4 ${isImageLeft ? 'order-2' : 'md:order-1'}`}>
-            <h2 className={`${simple ? 'text-2xl md:text-3xl ' : 'text-3xl md:text-4xl'} font-sans font-bold text-gray-900 tracking-tight mb-4`}>
+            <h2 className={`${simple ? 'text-2xl md:text-3xl ' : 'text-3xl md:text-4xl'} font-sans font-bold text-gray-700 tracking-tight mb-4`}>
               {title}
             </h2>
             
@@ -54,7 +54,7 @@ const ImageTextSection = ({
               <div className="h-0.5 w-20 bg-amber-600 rounded-full"></div>
             )}
             
-            <p className={`text-gray-700 ${simple ? 'text-base' : 'text-lg'} leading-relaxed`}>
+            <p className={`text-gray-600 ${simple ? 'text-base' : 'text-lg'} leading-relaxed`}>
               {description}
             </p>
             

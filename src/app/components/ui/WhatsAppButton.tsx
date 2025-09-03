@@ -4,7 +4,7 @@ import Image from 'next/image';
 const WhatsAppButton = () => {
   return (
     <Link
-      href="https://wa.me/237690000000" // Remplacez par votre numéro WhatsApp réel
+      href="https://wa.me/+237691528015" // Remplacez par votre numéro WhatsApp réel
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg z-50 group"

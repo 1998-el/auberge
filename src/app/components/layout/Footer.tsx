@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-16 px-12">
+    <footer className="bg-[#001b39] text-gray-400 py-16 px-12">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-12 max-w-7xl">
         {/* Brand Section */}
         <div className="lg:col-span-2 space-y-6">
@@ -72,7 +72,7 @@ const Footer = () => {
                 <svg className="w-4 h-4 mr-3 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +237 6 99 99 99
+               +237 659 407 948 / +237 672 489 289
               </p>
               <p className="flex items-center">
                 <svg className="w-4 h-4 mr-3 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-semibold text-white uppercase tracking-wider mb-4">Suivez-nous</h3>
             <div className="flex space-x-4">
-              {['facebook', 'instagram', 'twitter', 'linkedin'].map((social) => (
+              {['facebook', 'instagram', 'linkedin'].map((social) => (
                 <a 
                   key={social} 
                   href={`https://${social}.com/manhattanmotel`} 

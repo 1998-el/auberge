@@ -35,13 +35,13 @@ export default function ReservationForm() {
 
     const formatDate = (date: Date) => format(date, "dd MMMM yyyy")
 
-    const message = `Bonjour! Je souhaite réserver au motel :
+    const message = `Bonjour! Je souhaite réserver au manhattan motel :
 📅 Séjour : ${formatDate(arrivalDate)} → ${formatDate(departureDate)}
-👥 Voyageurs : ${guests}
+👥 personne : ${guests}
 Merci de me confirmer la disponibilité.`
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappLink = `https://wa.me/672489289?text=${encodedMessage}`
+    const whatsappLink = `https://wa.me/691528015?text=${encodedMessage}`
     window.open(whatsappLink, '_blank')
 
     setIsSubmitting(false)
@@ -136,7 +136,7 @@ Merci de me confirmer la disponibilité.`
 
       {/* Nombre de voyageurs */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Voyageurs</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Personne</label>
         <div className="flex items-center border border-gray-300 rounded-md overflow-hidden w-32 bg-white">
           <button
             type="button"

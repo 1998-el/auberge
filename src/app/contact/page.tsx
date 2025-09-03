@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import SimpleBanner from '../components/banners/SimpleBanner';
-import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { 
+  FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, 
+  FaPhone, FaEnvelope, FaClock, FaLinkedin, FaGithub 
+} from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -24,8 +27,7 @@ export default function ContactPage() {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000)); // simulation
       console.log('Form submitted:', formData);
       alert('Message envoyé avec succès ! Nous vous répondrons sous 24h.');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -46,13 +48,15 @@ export default function ContactPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl">
-          {/* Contact Information */}
+          
+          {/* Infos de contact */}
           <div className="bg-white p-8 rounded-xl border">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 font-serif">
               Nos Coordonnées
             </h2>
             
             <div className="space-y-6">
+              {/* Adresse */}
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-full mr-4">
                   <FaMapMarkerAlt className="text-amber-600 text-xl" />
@@ -66,6 +70,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Téléphone */}
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-full mr-4">
                   <FaPhone className="text-amber-600 text-xl" />
@@ -79,6 +84,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Email */}
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-full mr-4">
                   <FaEnvelope className="text-amber-600 text-xl" />
@@ -92,6 +98,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Horaires */}
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-full mr-4">
                   <FaClock className="text-amber-600 text-xl" />
@@ -105,6 +112,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Réseaux sociaux */}
               <div className="pt-4">
                 <h3 className="font-semibold text-gray-800 mb-3">Suivez-nous</h3>
                 <div className="flex space-x-4">
@@ -117,13 +125,19 @@ export default function ContactPage() {
                   <Link href="#" className="text-amber-600 hover:text-amber-700 transition-colors">
                     <FaWhatsapp className="text-2xl" />
                   </Link>
+                  <Link href="#" className="text-amber-600 hover:text-amber-700 transition-colors">
+                    <FaLinkedin className="text-2xl" />
+                  </Link>
+                  <Link href="#" className="text-amber-600 hover:text-amber-700 transition-colors">
+                    <FaGithub className="text-2xl" />
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-xl border">
+          {/* Formulaire */}
+          <div className="bg-white p-8 rounded-xl border border-gray-100 text-gray-800">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 font-serif">
               Envoyez-nous un message
             </h2>
