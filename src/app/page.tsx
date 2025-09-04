@@ -54,7 +54,7 @@ export default function Home() {
           <div className="space-y-16">
             <ScrollMotion delay={0.1}>
               <ImageTextSection
-                imageSrc="/hotel/room_(5).jpg"
+                imageSrc="https://i.pinimg.com/736x/13/84/32/1384328f75c54b741957546ffc8539e6.jpg"
                 imageAlt="Chambre d'hôtel luxueuse et moderne"
                 title="Votre tranquillité, notre priorité"
                 description="Nos suites exclusives allient confort et élégance au cœur de la ville. Chaque espace a été pensé pour votre bien-être, avec un service discret et attentif disponible 24h/24."
@@ -66,7 +66,7 @@ export default function Home() {
 
             <ScrollMotion delay={0.2}>
               <ImageTextSection
-                imageSrc="/assets/surveillance.jpg"
+                imageSrc="/images/surveillance.png"
                 imageAlt="Système de vidéosurveillance et gardiennage"
                 title="Sécurité assurée 24h/24"
                 description="Dormez l’esprit léger : notre établissement est équipé d’un système de vidéosurveillance moderne et d’un gardien présent en permanence."
@@ -76,17 +76,7 @@ export default function Home() {
               />
             </ScrollMotion>
 
-            <ScrollMotion delay={0.3}>
-              <ImageTextSection
-                imageSrc="/hotel/surveillance.jpg"
-                imageAlt="Parking surveillé avec gardien"
-                title="Parking surveillé et gardienné"
-                description="Votre véhicule bénéficie d’une protection maximale grâce à la vidéosurveillance et à la présence d’un gardien sur site."
-                imagePosition="right"
-                linkHref="/galerie"
-                linkText="Visite virtuelle"
-              />
-            </ScrollMotion>
+          
 
             <ScrollMotion delay={0.4}>
               <ImageTextSection
@@ -232,7 +222,7 @@ export default function Home() {
           subtitle="Réservez dès maintenant votre séjour exclusif"
           buttonText="Réserver maintenant"
           buttonHref="/reservation"
-          backgroundImage="/hotel/room_(5).jpg"
+          backgroundImage="https://i.pinimg.com/736x/93/30/23/933023fac9c4c3ae6791082386fd8fe8.jpg"
         />
       </div>
     </main>

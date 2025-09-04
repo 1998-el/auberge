@@ -4,7 +4,7 @@ const SimpleBanner = ({ title, subtitle }: { title: string; subtitle?: string })
   return (
     <section className="relative h-96 bg-gray-100">
       <Image
-        src="/hotel/room_(3).jpg"
+        src="https://i.pinimg.com/736x/93/30/23/933023fac9c4c3ae6791082386fd8fe8.jpg"
         alt="room"
         fill
         
