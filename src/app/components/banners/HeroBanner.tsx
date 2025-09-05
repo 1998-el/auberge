@@ -11,14 +11,15 @@ const HeroBanner = () => {
   const images = [
     { src: '/images/img_4.jpg', alt: 'Chambre d\'hôtel luxueuse' },
     { src: '/images/img_5.jpg', alt: 'Hall d\'entrée élégant' },
-    { src: '/images/img_8.jpg', alt: 'Piscine panoramique' },
-    { src: '/images/img_14.jpg', alt: 'Chambre spacieuse et moderne' }
+    { src: '/images/img_8.jpg', alt: 'faca exterieure' },
+    { src: '/images/img_14.jpg', alt: 'Chambre spacieuse et moderne' },
+    { src: '/images/bar.jpg', alt: 'bar' }
   ];
 
   const startSlideshow = useCallback(() => {
     intervalRef.current = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 8000);
+    }, 7000);
   }, [images.length]);
 
   const stopSlideshow = useCallback(() => {
@@ -41,7 +42,7 @@ const HeroBanner = () => {
         {images.map((img, index) => (
           <div 
             key={img.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${ index === currentImage ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 transition-opacity duration-2000 ease-in-out ${ index === currentImage ? 'opacity-100' : 'opacity-0'}`}
           >
             <Image
               src={img.src}

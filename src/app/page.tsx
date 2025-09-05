@@ -13,8 +13,11 @@ export default function Home() {
       <div>
         {/* Accueil */}
         <ScrollMotion>
-          <section className="container mx-auto px-4 text-center space-y-8 py-16">
-            <h2 className="text-3xl md:text-4xl font-bold logo_ text-gray-900">
+          <section className="container mx-auto px-4 text-center flex flex-col justify-center items-center  space-y-8 py-16">
+            <div className="hidden md:flex items-center ">
+              <Image src="/logo/logo.png" alt="logo" width={100} height={80} priority />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold logo_ text-gray-900 ">
               Bienvenue au <span className="text-amber-600">Manhattan Motel</span>
             </h2>
 
@@ -29,11 +32,14 @@ export default function Home() {
             </div>
 
             {/* Trois images en grille */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12 px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12 lg:px-8 md:px-2">
               {[
-                { src: '/assets/detente_cmr.jpg', alt: 'Chambre moderne' },
+                { src: '/images/gardien.jpg', alt: 'Chambre moderne' },
                 { src: '/images/img_4.jpg', alt: 'Restaurant élégant' },
                 { src: '/images/img_13.jpg', alt: 'Accueil chaleureux' },
+                { src: '/images/bar.jpg', alt: 'Chambre moderne' },
+                { src: '/images/img_8.jpg', alt: 'Restaurant élégant' },
+                { src: '/images/img_1.jpg', alt: 'Accueil chaleureux' },
               ].map((img, i) => (
                 <div key={i} className="overflow-hidden rounded-sm ">
                   <Image
@@ -66,7 +72,7 @@ export default function Home() {
 
             <ScrollMotion delay={0.2}>
               <ImageTextSection
-                imageSrc="/images/surveillance.png"
+                imageSrc="/images/gardien.jpg"
                 imageAlt="Système de vidéosurveillance et gardiennage"
                 title="Sécurité assurée 24h/24"
                 description="Dormez l’esprit léger : notre établissement est équipé d’un système de vidéosurveillance moderne et d’un gardien présent en permanence."
@@ -84,7 +90,7 @@ export default function Home() {
                 imageAlt="Groupe électrogène de secours moderne"
                 title="Énergie garantie en toute circonstance"
                 description="Avec notre groupe électrogène de secours, profitez d’un confort ininterrompu, même en cas de coupure électrique."
-                imagePosition="left"
+                imagePosition="right"
                 linkHref="/galerie"
                 linkText="Visite virtuelle"
               />
@@ -92,11 +98,11 @@ export default function Home() {
 
             <ScrollMotion delay={0.5}>
               <ImageTextSection
-                imageSrc="/images/eau_.jpg"
+                imageSrc="/images/eau_.png"
                 imageAlt="Réservoir d’eau pour approvisionnement continu"
                 title="Approvisionnement continu en eau"
                 description="Un système de réserve moderne vous garantit un accès permanent à l’eau, même lors des interruptions du réseau."
-                imagePosition="right"
+                imagePosition="left"
                 linkHref="/galerie"
                 linkText="Visite virtuelle"
               />

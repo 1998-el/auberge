@@ -26,3 +26,19 @@ body {
    font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
 }
+.mobile_menu {             /* prend tout l’écran */
+  display: flex; 
+  height: 100vh; 
+  width: 100%;       /* affichage actif */
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95); /* fond semi-transparent */
+
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.display_menu {
+  display: none; /* caché */
+  width: 100%;
+}

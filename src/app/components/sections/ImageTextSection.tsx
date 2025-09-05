@@ -26,17 +26,25 @@ const ImageTextSection = ({
   const isImageLeft = imagePosition === 'left';
 
   return (
-    <section className={`py-6 ${simple ? 'bg-white' : ''}`}>
-      <div className={`container mx-auto  ${simple ? 'max-w-5xl' : 'max-w-6xl'}`}>
-        <div className={`flex flex-col md:flex-row items-start  ${simple ? 'md:gap-8' : 'md:gap-12'}`}>
+    <section className={`py-8 sm:py-12 ${simple ? 'bg-white' : ''}`}>
+      <div className={`container mx-auto ${simple ? 'max-w-5xl' : 'max-w-6xl'} px-4`}>
+        <div
+          className={`flex flex-col md:flex-row items-center md:items-start ${
+            simple ? 'md:gap-8' : 'md:gap-12'
+          } space-y-6 md:space-y-0`}
+        >
           {/* Image Column */}
-          <div className={`w-full md:w-1/2 relative overflow-hidden  ${isImageLeft ? 'order-1' : 'md:order-2'} ${simple ? '' : 'shadow-md'}`}>
+          <div
+            className={`w-full md:w-1/2 relative overflow-hidden ${
+              isImageLeft ? 'order-1' : 'md:order-2'
+            } ${simple ? '' : 'shadow-md rounded-lg'}`}
+          >
             <Image
               src={imageSrc}
               alt={imageAlt}
               width={900}
               height={525}
-              className="object-cover w-full h-[432px] "
+              className="object-cover w-full h-auto aspect-video rounded-lg"
               priority
             />
             {!simple && (
@@ -45,26 +53,46 @@ const ImageTextSection = ({
           </div>
 
           {/* Text Column */}
-          <div className={`w-full md:w-1/2 space-y-4 ${isImageLeft ? 'order-2' : 'md:order-1'}`}>
-            <h2 className={`${simple ? 'text-2xl md:text-3xl ' : 'text-3xl md:text-4xl'} font-sans font-bold text-gray-700 tracking-tight mb-4`}>
+          <div
+            className={`w-full md:w-1/2 space-y-4 ${
+              isImageLeft ? 'order-2' : 'md:order-1'
+            }`}
+          >
+            <h2
+              className={`${
+                simple ? 'text-2xl sm:text-3xl' : 'text-3xl sm:text-4xl'
+              } font-sans font-bold text-gray-700 tracking-tight`}
+            >
               {title}
             </h2>
-            
+
             {!simple && (
               <div className="h-0.5 w-20 bg-amber-600 rounded-full"></div>
             )}
-            
-            <p className={`text-gray-600 ${simple ? 'text-base' : 'text-lg'} leading-relaxed`}>
+
+            <p
+              className={`text-gray-600 ${
+                simple ? 'text-base' : 'text-lg'
+              } leading-relaxed`}
+            >
               {description}
             </p>
-            
+
             {linkHref && linkText && (
               <Link
                 href={linkHref}
-                className={`inline-flex items-center font-semibold group transition-colors duration-200 ${simple ? 'text-amber-700 hover:text-amber-800' : 'text-amber-600 hover:text-amber-700'}`}
+                className={`inline-flex items-center font-semibold group transition-colors duration-200 ${
+                  simple
+                    ? 'text-amber-700 hover:text-amber-800'
+                    : 'text-amber-600 hover:text-amber-700'
+                }`}
               >
                 {linkText}
-                <ArrowRight className={`ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 ${simple ? '' : 'h-5 w-5 group-hover:translate-x-2'}`} />
+                <ArrowRight
+                  className={`ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 ${
+                    simple ? '' : 'h-5 w-5 group-hover:translate-x-2'
+                  }`}
+                />
               </Link>
             )}
           </div>
