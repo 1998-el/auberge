@@ -1,33 +1,29 @@
-import Image from 'next/image';
-import HeroBanner from './components/banners/HeroBanner';
-import ImageTextSection from './components/sections/ImageTextSection';
-import CtaBanner from './components/banners/CtaBanner';
-import ScrollMotion from './components/motion/ScrollMotion';
+<main>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+        <div className="bg-white rounded-2xl shadow-md p-8 max-w-md text-center">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
+          <p className="text-gray-700 mb-6">
+            Le site est momentanément indisponible.<br />
+            Veuillez nous excuser pour la gêne occasionnée.
+          </p>
 
-export default function Home() {
-  return (
-    <main>
-     <div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
-  <div class="bg-white rounded-2xl shadow-md p-8 max-w-md text-center">
-    <h2 class="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
-    <p class="text-gray-700 mb-6">
-      Le site est momentanément indisponible.<br />
-      Veuillez nous excuser pour la gêne occasionnée.
-    </p>
+          <div className="flex flex-col gap-3">
+            <Link
+              href="mailto:pmounkam8@gmail.com"
+              className="px-6 py-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition"
+            >
+              Contacter le support
+            </Link>
 
-    <div class="flex flex-col gap-3">
-      <a href="mailto:pmounkam8@gmail.com" 
-         class="px-6 py-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition">
-        Contacter le support
-      </a>
-      <button onclick="location.reload()" 
-              class="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
-        Réessayer
-      </button>
-    </div>
-  </div>
-</div>
-
+            <button
+              onClick={() => location.reload()}
+              className="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+            >
+              Réessayer
+            </button>
+          </div>
+        </div>
+      </div>
       {/* <HeroBanner />
 
       <div>
