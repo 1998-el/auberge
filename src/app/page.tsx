@@ -7,8 +7,8 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
-        <div className="bg-white rounded-2xl shadow-md p-8 max-w-md text-center">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+        <div className="bg-transparent rounded-2xl  p-8 max-w-md text-center">
           <h2 className="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
           <p className="text-gray-700 mb-6">
             Le site est momentanément indisponible.<br />
