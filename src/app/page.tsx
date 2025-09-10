@@ -7,11 +7,30 @@ import ScrollMotion from './components/motion/ScrollMotion';
 export default function Home() {
   return (
     <main>
-      {/* Bannière principale */}
-      <HeroBanner />
+     <div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+  <div class="bg-white rounded-2xl shadow-md p-8 max-w-md text-center">
+    <h2 class="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
+    <p class="text-gray-700 mb-6">
+      Le site est momentanément indisponible.<br />
+      Veuillez nous excuser pour la gêne occasionnée.
+    </p>
+
+    <div class="flex flex-col gap-3">
+      <a href="mailto:pmounkam8@gmail.com" 
+         class="px-6 py-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition">
+        Contacter le support
+      </a>
+      <button onclick="location.reload()" 
+              class="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+        Réessayer
+      </button>
+    </div>
+  </div>
+</div>
+
+      {/* <HeroBanner />
 
       <div>
-        {/* Accueil */}
         <ScrollMotion>
           <section className="container mx-auto px-4 text-center flex flex-col justify-center items-center  space-y-8 py-16">
             <div className="hidden md:flex items-center ">
@@ -21,7 +40,6 @@ export default function Home() {
               Bienvenue au <span className="text-amber-600">Manhattan Motel</span>
             </h2>
 
-            {/* Texte d’intro */}
             <div className="mt-4 max-w-2xl mx-auto">
               <p className="text-gray-700 text-lg leading-relaxed">
                 Découvrez un cadre moderne, sûr et chaleureux au cœur de la ville.
@@ -31,7 +49,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Trois images en grille */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12 lg:px-8 md:px-2">
               {[
                 { src: '/images/gardien.jpg', alt: 'Chambre moderne' },
@@ -55,7 +72,6 @@ export default function Home() {
           </section>
         </ScrollMotion>
 
-        {/* Sections avec image et texte */}
         <section className="my-8 bg-gray-50 py-12">
           <div className="space-y-16">
             <ScrollMotion delay={0.1}>
@@ -110,7 +126,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section Wi-Fi */}
         <ScrollMotion delay={0.6}>
           <section className="bg-[#001b39] py-20">
             <div className="container mx-auto px-4 max-w-6xl">
@@ -181,7 +196,6 @@ export default function Home() {
           </section>
         </ScrollMotion>
 
-        {/* Contact */}
         <ScrollMotion delay={0.7}>
           <section className="container  h-[100vh] flex flex-col justify-center items-center mx-auto px-4 py-16 text-center bg-amber-600/5" id='contact'>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -222,7 +236,6 @@ export default function Home() {
           </section>
         </ScrollMotion>
 
-        {/* Call To Action */}
         <CtaBanner
           title="Prêt pour une expérience inoubliable ?"
           subtitle="Réservez dès maintenant votre séjour exclusif"
@@ -230,7 +243,7 @@ export default function Home() {
           buttonHref="/reservation"
           backgroundImage="https://i.pinimg.com/736x/93/30/23/933023fac9c4c3ae6791082386fd8fe8.jpg"
         />
-      </div>
+      </div> */}
     </main>
   );
 }
