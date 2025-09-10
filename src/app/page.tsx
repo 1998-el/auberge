@@ -1,4 +1,12 @@
-<main>
+import Image from 'next/image';
+import HeroBanner from './components/banners/HeroBanner';
+import ImageTextSection from './components/sections/ImageTextSection';
+import CtaBanner from './components/banners/CtaBanner';
+import ScrollMotion from './components/motion/ScrollMotion';
+import Link from 'next/link';
+export default function Home() {
+  return (
+    <main>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
         <div className="bg-white rounded-2xl shadow-md p-8 max-w-md text-center">
           <h2 className="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
@@ -15,15 +23,11 @@
               Contacter le support
             </Link>
 
-            <button
-              onClick={() => location.reload()}
-              className="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
-            >
-              Réessayer
-            </button>
+          
           </div>
         </div>
       </div>
+
       {/* <HeroBanner />
 
       <div>
