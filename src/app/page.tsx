@@ -7,28 +7,9 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-        <div className="bg-transparent rounded-2xl  p-8 max-w-md text-center">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">⚠️ Oups !</h2>
-          <p className="text-gray-700 mb-6">
-            Le site est momentanément indisponible.<br />
-            Veuillez nous excuser pour la gêne occasionnée.
-          </p>
+ 
 
-          <div className="flex flex-col gap-3">
-            <Link
-              href="mailto:pmounkam8@gmail.com"
-              className="px-6 py-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition"
-            >
-              Contacter le support
-            </Link>
-
-          
-          </div>
-        </div>
-      </div>
-
-      {/* <HeroBanner />
+      <HeroBanner />
 
       <div>
         <ScrollMotion>
@@ -243,7 +224,7 @@ export default function Home() {
           buttonHref="/reservation"
           backgroundImage="https://i.pinimg.com/736x/93/30/23/933023fac9c4c3ae6791082386fd8fe8.jpg"
         />
-      </div> */}
+      </div> 
     </main>
   );
 }
