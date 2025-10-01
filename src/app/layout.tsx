@@ -41,18 +41,18 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body className="font-sans text-gray-700 bg-white antialiased">
-        {/* <header>
+        <header>
           <Navbar />
-        </header> */}
+        </header> 
 
         <main className="min-h-screen">{children}</main>
 
-        {/* <footer>
+        <footer>
           <Footer />
-        </footer> */}
+        </footer> 
 
         {/* Bouton d’action flottant */}
-        {/* <WhatsAppButton /> */}
+        <WhatsAppButton /> 
       </body>
     </html>
   );
