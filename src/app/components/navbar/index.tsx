@@ -29,43 +29,107 @@ const Navbar = () => {
 
   return (
     <div className="bg-transparent">
-      {/* Bannière supérieure */}
-      <div className="bg-[#001b39] text-white text-xs sm:text-sm py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2 sm:gap-6">
-          {/* Logo mobile */}
-          <div className="flex items-center sm:hidden w-full justify-center">
-            <Image src="/logo/logo.png" alt="logo" width={70} height={50} priority />
-          </div>
-
-          {/* Contacts */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 w-full sm:w-auto text-center sm:text-left space-y-1 sm:space-y-0">
-            <a href="tel:+237659407948" className="flex justify-center sm:justify-start items-center hover:text-amber-400 transition-colors text-xs sm:text-sm">
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              +237 659 407 948 <span className="hidden sm:inline text-gray-300 text-xs">(Mobile Money)</span>
-            </a>
-
-            <a href="tel:+237672489289" className="flex justify-center sm:justify-start items-center hover:text-amber-400 transition-colors text-xs sm:text-sm">
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              +237 672 489 289 <span className="hidden sm:inline text-gray-300 text-xs">(Orange Money)</span>
-            </a>
-          </div>
+    {/* Bannière supérieure - Version améliorée mobile */}
+<div className="bg-[#001b39] text-white py-2 px-8 sm:py-2 sm:px-4 ">
+  <div className="max-w-7xl mx-auto px-3">
+    {/* Layout mobile empilé */}
+    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-2 sm:gap-4">
+      
+      {/* Logo mobile - Centré en haut */}
+      <div className="flex justify-center sm:hidden pb-1 border-b border-gray-700/50">
+        <div className="relative w-16 h-12">
+          <Image 
+            src="/logo/logo.png" 
+            alt="logo" 
+            fill
+            className="object-contain"
+            priority
+            sizes="64px"
+          />
         </div>
       </div>
 
+      {/* Contacts - Réorganisé pour mobile */}
+      <div className="flex flex-col xs:flex-row xs:justify-between sm:flex-row sm:items-center sm:space-x-4 lg:space-x-6 w-full sm:w-auto space-y-1 xs:space-y-0 sm:space-y-0">
+        
+        {/* Premier numéro */}
+        <div className="flex flex-col xs:flex-row items-center justify-between xs:space-x-2 sm:space-x-3">
+          <a 
+            href="tel:+237659407948" 
+            className="flex items-center justify-center xs:justify-start hover:text-amber-400 transition-colors duration-200 text-xs sm:text-sm group flex-1"
+          >
+            <span className="relative flex items-center min-w-0">
+              <span className="hidden xs:inline mr-1">📱</span>
+              +237 659 407 948
+              <span className="hidden sm:inline text-gray-300 text-xs pl-2 whitespace-nowrap">
+                (Mobile Money)
+              </span>
+            </span>
+          </a>
+
+        </div>
+
+        {/* Séparateur visuel */}
+        <div className="hidden xs:block w-px h-4 bg-gray-600 mx-1"></div>
+
+        {/* Deuxième numéro */}
+        <div className="flex flex-col xs:flex-row items-center justify-between xs:space-x-2 sm:space-x-3">
+          <a 
+            href="tel:+237672489289" 
+            className="flex items-center justify-center xs:justify-start hover:text-amber-400 transition-colors duration-200 text-xs sm:text-sm group flex-1"
+          >
+            <span className="relative flex items-center min-w-0">
+              <span className="hidden xs:inline mr-1">📞</span>
+              +237 672 489 289
+              <span className="hidden sm:inline text-gray-300 text-xs pl-2 whitespace-nowrap">
+                (Orange Money)
+              </span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      {/* Réseaux sociaux - Optimisé mobile */}
+      <div className="hidden lg:flex justify-center pt-1 sm:pt-0 border-t border-gray-700/50 sm:border-t-0">
+        <div className="flex space-x-2 sm:space-x-3">
+          {['facebook', 'instagram', 'linkedin'].map((social) => (
+            <a 
+              key={social} 
+              href={`https://${social}.com/manhattanmotel`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label={`Suivez-nous sur ${social}`}
+              className="text-gray-400 hover:text-amber-400 transition-all duration-200 border border-gray-600 p-1.5 sm:p-2 rounded-full bg-amber-50/5 hover:bg-amber-600/20 active:scale-95 active:bg-amber-600/30"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image 
+                  src={`/social/${social}.png`} 
+                  alt={`${social} icon`} 
+                  fill
+                  className="object-contain"
+                  sizes="20px"
+                />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
       {/* Navigation principale */}
       <header
         className={`w-full z-50 transition-all duration-300 ${
           scrolled
-            ? 'fixed top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200'
+            ? 'fixed top-0  bg-white/95 backdrop-blur-sm border-b border-gray-200'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-16 sm:h-14 px-2 sm:px-8">
+        <div className=" lg:py-2 md:px-4 sm:px-4">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2 sm:gap-6 md:px-4 px-4">
             {/* Logo desktop */}
             {/* <div className="hidden md:flex items-center">
               <Image src="/logo/logo.png" alt="logo" width={80} height={60} priority />

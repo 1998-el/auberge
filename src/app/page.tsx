@@ -60,7 +60,7 @@ export default function Home() {
                 imageSrc="https://i.pinimg.com/736x/13/84/32/1384328f75c54b741957546ffc8539e6.jpg"
                 imageAlt="Chambre d'hôtel luxueuse et moderne"
                 title="Votre tranquillité, notre priorité"
-                description="Nos suites exclusives allient confort et élégance au cœur de la ville. Chaque espace a été pensé pour votre bien-être, avec un service discret et attentif disponible 24h/24."
+                description="Nos chambres haut de standing, réputées pour leur confort exceptionnel, allient élégance et raffinement au cœur de la ville. Chaque espace a été conçu pour votre bien-être, avec un service discret et attentionné disponible 24h/24."
                 imagePosition="right"
                 linkHref="/chambres"
                 linkText="Découvrir nos suites"
