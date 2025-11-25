@@ -60,7 +60,7 @@ export default function ChambresPage() {
             Envie d&apos;une escapade authentique ?
           </h2>
           <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Notre auberge vous propose des formules adaptées à tous les besoins, avec des services personnalisés pour rendre votre séjour inoubliable.
+            Notre motel vous propose des formules adaptées à tous les besoins, avec des services personnalisés pour rendre votre séjour inoubliable.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <div className="bg-amber-50 p-4 rounded-lg">
