@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Paiement | Manhattan Motel - Espace Admin",
-  description: "Paiement des frais d'hébergement",
+  description: "Paiement des frais d'hebergement",
 };
 
 export default function PaymentPage() {
@@ -30,7 +30,7 @@ export default function PaymentPage() {
             </div>
           </div>
           <h1 className="text-2xl font-bold text-white">
-            Offre d'hébergement gratuit expirée
+            Offre d'hebergement gratuit expiree
           </h1>
         </div>
 
@@ -38,29 +38,29 @@ export default function PaymentPage() {
         <div className="p-8 text-center">
           <div className="mb-6">
             <p className="text-gray-700 text-lg leading-relaxed">
-             Votre offre d’hébergement gratuit a expiré ce{" "}
+              Votre offre d'hebergement gratuit a expire le{" "}
               <span className="font-bold text-red-600">14/03/2026</span>
             </p>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-6 mb-6">
             <p className="text-gray-600 mb-4">
-              Veuillez vous connecter à votre espace admin afin de vous
-              acquitter des frais d'hébergement
+              Veuillez vous connecter a votre espace admin afin de vous
+              acquitter des frais d'hebergement
             </p>
             <div className="text-4xl font-bold text-gray-900">7.97 $</div>
             <p className="text-gray-500 text-sm mt-2">USD</p>
           </div>
 
           <p className="text-gray-600 mb-8">
-            afin de continuer à utiliser nos services.
+            afin de continuer a utiliser nos services.
           </p>
         </div>
 
         {/* Footer */}
         <div className="bg-gray-100 px-8 py-4 text-center">
           <p className="text-gray-500 text-xs">
-            © 2025 Manhattan Motel. Tous droits réservés.
+            © 2025 Manhattan Motel. Tous droits reserves.
           </p>
         </div>
       </div>
