@@ -13,7 +13,7 @@ export default function Home() {
         </p>
 
         <p className="mt-4 text-sm text-gray-500 italic">
-          Note : L'accès à cette application est temporairement suspendu jusqu'au renouvellement de l'abonnement.
+          Note : L&apos;accès à cette application est temporairement suspendu jusqu&apos;au renouvellement de l&apos;abonnement.
         </p>
       </div>
     </main>
