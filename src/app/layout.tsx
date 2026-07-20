@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className="font-sans text-gray-700 bg-white antialiased">
         <header></header>
         {/* <main className="min-h-screen">{children}</main> */}
-        <h1 className="text-red-600 ">erreur avec votre offre d'hebergement!</h1>
+        <h1 className="text-red-600 ">erreur avec votre offre de mise en ligne</h1>
         <footer></footer>
       </body>
     </html>
