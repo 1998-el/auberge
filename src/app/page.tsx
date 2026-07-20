@@ -1,114 +1,24 @@
-import Image from 'next/image';
-import HeroBanner from './components/banners/HeroBanner';
-import ImageTextSection from './components/sections/ImageTextSection';
-import CtaBanner from './components/banners/CtaBanner';
-import ScrollMotion from './components/motion/ScrollMotion';
-import Link from 'next/link';
 export default function Home() {
   return (
-    <main>
- 
+    <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="text-center max-w-lg">
+        <h1 className="text-4xl md:text-5xl font-bold text-red-600">
+          Abonnement expiré
+        </h1>
 
-      <HeroBanner />
+        <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+          Votre abonnement a expiré.
+          <br />
+          Veuillez contacter votre administrateur afin de le renouveler.
+        </p>
 
-      <div>
-        <ScrollMotion>
-          <section className="container mx-auto px-4 text-center flex flex-col justify-center items-center  space-y-8 py-16">
-            <div className="hidden md:flex items-center ">
-              <Image src="/logo/logo.png" alt="logo" width={100} height={80} priority />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold logo_ text-gray-900 ">
-              Bienvenue au <span className="text-amber-600">Manhattan Motel</span>
-            </h2>
-
-            <div className="mt-4 max-w-2xl mx-auto">
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Découvrez un cadre moderne, sûr et chaleureux au cœur de la ville.
-                Nos chambres et suites élégantes vous offrent tout le confort dont
-                vous avez besoin, avec une sécurité renforcée grâce à la
-                vidéosurveillance et la présence permanente d’un gardien.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12 lg:px-8 md:px-2">
-              {[
-                { src: '/images/gardien.jpg', alt: 'Chambre moderne' },
-                { src: '/images/img_4.jpg', alt: 'Restaurant élégant' },
-                { src: '/images/img_13.jpg', alt: 'Accueil chaleureux' },
-                { src: '/images/bar.jpg', alt: 'Chambre moderne' },
-                { src: '/images/img_8.jpg', alt: 'Restaurant élégant' },
-                { src: '/images/img_1.jpg', alt: 'Accueil chaleureux' },
-              ].map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-sm ">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={400}
-                    height={256}
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        </ScrollMotion>
-
-        <section className="my-8 bg-gray-50 py-12">
-          <div className="space-y-16">
-            <ScrollMotion delay={0.1}>
-              <ImageTextSection
-                imageSrc="https://i.pinimg.com/736x/13/84/32/1384328f75c54b741957546ffc8539e6.jpg"
-                imageAlt="Chambre d'hôtel luxueuse et moderne"
-                title="Votre tranquillité, notre priorité"
-                description="Nos chambres haut de standing, réputées pour leur confort exceptionnel, allient élégance et raffinement au cœur de la ville. Chaque espace a été conçu pour votre bien-être, avec un service discret et attentionné disponible 24h/24."
-                imagePosition="right"
-                linkHref="/chambres"
-                linkText="Découvrir nos suites"
-              />
-            </ScrollMotion>
-
-            <ScrollMotion delay={0.2}>
-              <ImageTextSection
-                imageSrc="/images/gardien.jpg"
-                imageAlt="Système de vidéosurveillance et gardiennage"
-                title="Sécurité assurée 24h/24"
-                description="Dormez l’esprit léger : notre établissement est équipé d’un système de vidéosurveillance moderne et d’un gardien présent en permanence."
-                imagePosition="left"
-                linkHref="/services"
-                linkText="Nos prestations"
-              />
-            </ScrollMotion>
-
-          
-
-            <ScrollMotion delay={0.4}>
-              <ImageTextSection
-                imageSrc="/images/img_1.jpg"
-                imageAlt="Groupe électrogène de secours moderne"
-                title="Énergie garantie en toute circonstance"
-                description="Avec notre groupe électrogène de secours, profitez d’un confort ininterrompu, même en cas de coupure électrique."
-                imagePosition="right"
-                linkHref="/galerie"
-                linkText="Visite virtuelle"
-              />
-            </ScrollMotion>
-
-            <ScrollMotion delay={0.5}>
-              <ImageTextSection
-                imageSrc="/images/eau_.png"
-                imageAlt="Réservoir d’eau pour approvisionnement continu"
-                title="Approvisionnement continu en eau"
-                description="Un système de réserve moderne vous garantit un accès permanent à l’eau, même lors des interruptions du réseau."
-                imagePosition="left"
-                linkHref="/galerie"
-                linkText="Visite virtuelle"
-              />
-            </ScrollMotion>
-          </div>
-        </section>
-
-        <ScrollMotion delay={0.6}>
-          <section className="bg-[#001b39] py-20">
+        <p className="mt-4 text-sm text-gray-500 italic">
+          Note : L'accès à cette application est temporairement suspendu jusqu'au renouvellement de l'abonnement.
+        </p>
+      </div>
+    </main>
+  );
+}          <section className="bg-[#001b39] py-20">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-50 mb-4">
